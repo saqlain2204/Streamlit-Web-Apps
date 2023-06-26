@@ -18,7 +18,8 @@ def hr_pred(input_data, Employee_name):
         return f"The Employee {Employee_name} is  likely to leave  the company"
     
 def main():
-    st.title("Emploee Retention Prediction")
+    st.title("Employee Retention Prediction")
+    st.write("A web application that predicts if your employee is likely to leave the company or not based on the given parameters.")
 
     # name -> text input
     # satisfaction level -> slider
@@ -60,7 +61,7 @@ def main():
         if 'not' in pred:
             st.success(pred)
         else:
-            st.warning(pred)
+            st.error(pred)
 
 if __name__ == '__main__':
     main()
