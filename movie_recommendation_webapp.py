@@ -10,7 +10,6 @@ vectors=cv.fit_transform(working_df['tags']).toarray()
 
 similarity = cosine_similarity(vectors)
 list1=[]
-@st.cache
 def recommend(movie):
     try:
         movie_index = working_df[working_df['title']==movie].index[0]
