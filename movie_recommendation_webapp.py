@@ -4,6 +4,17 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
 
+
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+
 working_df=pd.read_csv("working_df.csv")
 cv=CountVectorizer(max_features=5000, stop_words='english')
 vectors=cv.fit_transform(working_df['tags']).toarray()
